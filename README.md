@@ -9,7 +9,10 @@
 For other options, please refer to the [official documentation](https://matplotlib.org/stable/users/explain/customizing.html).
 
 ### Example figure
-![example plot](assets/example.png)
+<div align="center">
+<img src="assets/example.png" alt="example figure" width="400"/>
+</div>
+
 You may need to configure the marker sizes, line widths, etc. to fit your needs.
 
 ### More colors
