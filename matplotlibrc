@@ -1,10 +1,10 @@
-# Default matplotlib style for recisicplots
+# Matplotlib style for @recisic
 
 # Color cycle
 axes.prop_cycle: cycler("color", ["6465E9", "4BA3E3", "95CA42", "E8A23B", "E14F62", "495567"])
 
 # Figure size and resolution
-figure.figsize: 3.5, 2.5
+figure.figsize: 3.50, 2.25
 figure.dpi: 150
 figure.constrained_layout.use: True
 
@@ -18,31 +18,42 @@ axes.spines.top: False
 xtick.major.pad: 2.0
 ytick.major.pad: 2.0
 axes.labelpad: 3.0
+xtick.major.width: 0.5
+ytick.major.width: 0.5
+xtick.minor.width: 0.5
+ytick.minor.width: 0.5
 
 # Grid
 axes.grid: True
 axes.axisbelow: True
-grid.alpha: 0.3
+grid.color: D9D9D9
 
 # Line widths
-axes.linewidth: 0.8
-grid.linewidth: 0.8
-lines.linewidth: 1.5
+axes.linewidth: 0.5
+grid.linewidth: 0.5
+lines.linewidth: 1.0
 
 # Legend
 legend.facecolor: "F0F0F0"
 legend.edgecolor: white
 legend.labelspacing: 0.25
+legend.fontsize: 6.5
 
 # Saving figure
 savefig.bbox: tight
 savefig.pad_inches: 0.05
+savefig.dpi: 300
 
 # Fonts
 font.sans-serif: Lato, Helvetica, Arial, sans-serif
 font.cursive: Lato, Helvetica, Arial, sans-serif
 font.family: sans-serif
-font.size: 10
+font.size: 7
+axes.labelsize: 7
+axes.titlesize: 7
+xtick.labelsize: 7
+ytick.labelsize: 7
+figure.titlesize: 7
 mathtext.fallback: None
 mathtext.fontset: custom
 mathtext.rm: "Lato"
