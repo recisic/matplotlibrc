@@ -39,7 +39,7 @@ xtick.major.width: 0.5
 ytick.major.width: 0.5
 xtick.minor.width: 0.5
 ytick.minor.width: 0.5
-axes.formatter.use_mathtext: True   # 1e-3 offsets / sci-notation in Lato, not DejaVu
+axes.formatter.use_mathtext: True   # 1e-3 offsets / sci-notation in Late Sans, not DejaVu
 
 # Grid
 axes.grid: True
@@ -80,8 +80,8 @@ ps.fonttype: 42
 svg.fonttype: none           # keep text as text in SVG
 
 # Fonts
-font.sans-serif: Lato, Helvetica, Arial, sans-serif
-font.cursive: Lato, Helvetica, Arial, sans-serif
+font.sans-serif: Late Sans, Lato, Helvetica, Arial, sans-serif
+font.cursive: Late Sans, Lato, Helvetica, Arial, sans-serif
 font.family: sans-serif
 font.size: 7
 axes.labelsize: 7
@@ -89,14 +89,8 @@ axes.titlesize: 7
 xtick.labelsize: 7
 ytick.labelsize: 7
 figure.titlesize: 7
-mathtext.fallback: cm        # only for symbols Lato 2.015 lacks (∇ ⋅ ∝ ⟨ ⟩) and the √ sign; None prints ¤ for those
+mathtext.fallback: None      # Late Sans already has the math symbols Lato lacks
 mathtext.fontset: custom
-mathtext.rm: "Lato"
-mathtext.it: "Lato:italic"
-mathtext.bf: "Lato:bold"
-
-# Lato-matched math symbols instead of Computer Modern: install math-font/LateSans-*.ttf
-# (Lato + symbols from Lete Sans Math, built with math-font/build_math_font.py), then use:
-# mathtext.rm: "Late Sans"
-# mathtext.bf: "Late Sans:bold"
-# mathtext.fallback: None
+mathtext.rm: "Late Sans"
+mathtext.it: "Late Sans:italic"
+mathtext.bf: "Late Sans:bold"
