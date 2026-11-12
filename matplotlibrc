@@ -1,12 +1,25 @@
 # Matplotlib style for @recisic
 
-# Color cycle
-axes.prop_cycle: cycler("color", ["6465E9", "4BA3E3", "95CA42", "E8A23B", "E14F62", "495567"])
+# Color cycle: indigo, sky, lime, amber, rose, slate
+# vs v1 (same hues): indigo slightly deeper, lime slightly lighter, amber slightly deeper,
+# so lime/amber no longer merge for red-green color-blind readers and indigo/sky differ in grayscale.
+# slate (C5) is the one dark color: use it for total / reference / "other".
+axes.prop_cycle: cycler("color", ["5756D8", "4BA3E3", "A0D54E", "DB952A", "E14F62", "495567"])
 
-# Figure size and resolution
+# Grayscale print with >3 series: use this line instead (adds linestyles + markers)
+# axes.prop_cycle: (cycler("color", ["5756D8", "4BA3E3", "A0D54E", "DB952A", "E14F62", "495567"]) + cycler("linestyle", ["-", "--", "-.", ":", (0, (4, 1.2, 1, 1.2, 1, 1.2)), (0, (7, 1.5))]) + cycler("marker", ["o", "s", "^", "D", "v", "P"]))
+
+# Figure size and resolution  (3.5 in = single column; use 7.0 in for double column)
 figure.figsize: 3.50, 2.25
 figure.dpi: 150
 figure.constrained_layout.use: True
+
+# Ink: near-black instead of pure black, so data colors carry the emphasis
+text.color: 262626
+axes.edgecolor: 262626
+axes.labelcolor: 262626
+xtick.color: 262626
+ytick.color: 262626
 
 # Axis spines
 axes.spines.left: True
@@ -14,35 +27,57 @@ axes.spines.bottom: True
 axes.spines.right: False
 axes.spines.top: False
 
-# Axis padding
+# Axis padding and ticks
 xtick.major.pad: 2.0
 ytick.major.pad: 2.0
 axes.labelpad: 3.0
+xtick.major.size: 3.0
+ytick.major.size: 3.0
+xtick.minor.size: 1.5
+ytick.minor.size: 1.5
 xtick.major.width: 0.5
 ytick.major.width: 0.5
 xtick.minor.width: 0.5
 ytick.minor.width: 0.5
+axes.formatter.use_mathtext: True   # 1e-3 offsets / sci-notation in Lato, not DejaVu
 
 # Grid
 axes.grid: True
 axes.axisbelow: True
-grid.color: D9D9D9
-
-# Line widths
-axes.linewidth: 0.5
+grid.color: E0E0E0
 grid.linewidth: 0.5
+
+# Line widths and markers
+axes.linewidth: 0.5
 lines.linewidth: 1.0
+lines.solid_capstyle: round
+lines.solid_joinstyle: round
+lines.markersize: 4.0
+lines.markeredgewidth: 0.8
+errorbar.capsize: 1.5
+patch.linewidth: 0.5
+hatch.linewidth: 0.5
+boxplot.medianprops.color: 262626   # default is C1 (sky)
 
 # Legend
-legend.facecolor: "F0F0F0"
-legend.edgecolor: white
-legend.labelspacing: 0.25
+legend.facecolor: "F5F5F5"
+legend.edgecolor: none
+legend.framealpha: 0.9
+legend.labelspacing: 0.1     # Lato's tall line height already separates rows
+legend.borderpad: 0.55
+legend.columnspacing: 1.0
+legend.handlelength: 1.6
+legend.handletextpad: 0.4
+legend.borderaxespad: 0.4
 legend.fontsize: 6.5
 
 # Saving figure
-savefig.bbox: tight
+savefig.bbox: tight          # 'standard' keeps the exact figsize (journals check widths)
 savefig.pad_inches: 0.05
 savefig.dpi: 300
+pdf.fonttype: 42             # embed TrueType: editable text in Illustrator, no Type 3 fonts
+ps.fonttype: 42
+svg.fonttype: none           # keep text as text in SVG
 
 # Fonts
 font.sans-serif: Lato, Helvetica, Arial, sans-serif
@@ -54,8 +89,14 @@ axes.titlesize: 7
 xtick.labelsize: 7
 ytick.labelsize: 7
 figure.titlesize: 7
-mathtext.fallback: None
+mathtext.fallback: cm        # only for symbols Lato 2.015 lacks (∇ ⋅ ∝ ⟨ ⟩) and the √ sign; None prints ¤ for those
 mathtext.fontset: custom
 mathtext.rm: "Lato"
 mathtext.it: "Lato:italic"
 mathtext.bf: "Lato:bold"
+
+# Lato-matched math symbols instead of Computer Modern: install math-font/LateSans-*.ttf
+# (Lato + symbols from Lete Sans Math, built with math-font/build_math_font.py), then use:
+# mathtext.rm: "Late Sans"
+# mathtext.bf: "Late Sans:bold"
+# mathtext.fallback: None
