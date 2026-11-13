@@ -9,7 +9,7 @@ axes.prop_cycle: cycler("color", ["5756D8", "4BA3E3", "A0D54E", "DB952A", "E14F6
 # Grayscale print with >3 series: use this line instead (adds linestyles + markers)
 # axes.prop_cycle: (cycler("color", ["5756D8", "4BA3E3", "A0D54E", "DB952A", "E14F62", "495567"]) + cycler("linestyle", ["-", "--", "-.", ":", (0, (4, 1.2, 1, 1.2, 1, 1.2)), (0, (7, 1.5))]) + cycler("marker", ["o", "s", "^", "D", "v", "P"]))
 
-# Figure size and resolution  (3.5 in = single column; use 7.0 in for double column)
+# Figure size and resolution  (Nature: 3.5 in = 89 mm single column, 7.2 in = 183 mm double column)
 figure.figsize: 3.50, 2.25
 figure.dpi: 150
 figure.constrained_layout.use: True
@@ -69,7 +69,8 @@ legend.columnspacing: 1.0
 legend.handlelength: 1.6
 legend.handletextpad: 0.4
 legend.borderaxespad: 0.4
-legend.fontsize: 6.5
+legend.fontsize: 7
+legend.title_fontsize: 7
 
 # Saving figure
 savefig.bbox: tight          # 'standard' keeps the exact figsize (journals check widths)
@@ -79,7 +80,7 @@ pdf.fonttype: 42             # embed TrueType: editable text in Illustrator, no 
 ps.fonttype: 42
 svg.fonttype: none           # keep text as text in SVG
 
-# Fonts
+# Fonts  (Nature: all text 5-7 pt, panel labels 8 pt bold; lines 0.25-1 pt)
 font.sans-serif: Late Sans, Lato, Helvetica, Arial, sans-serif
 font.cursive: Late Sans, Lato, Helvetica, Arial, sans-serif
 font.family: sans-serif
@@ -89,6 +90,7 @@ axes.titlesize: 7
 xtick.labelsize: 7
 ytick.labelsize: 7
 figure.titlesize: 7
+figure.labelsize: 7          # fig.supxlabel / supylabel (default 'large' = 8.4 pt)
 mathtext.fallback: None      # Late Sans already has the math symbols Lato lacks
 mathtext.fontset: custom
 mathtext.rm: "Late Sans"
